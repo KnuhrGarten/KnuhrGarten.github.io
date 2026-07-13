@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Über uns – Knuhr Gartendienstleistungen</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 110, 58, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            z-index: 100;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+                transition: color 0.3s;
+            }
+
+                nav a:hover {
+                    color: #a8d8a0;
+                }
+
+                nav a.active {
+                    border-bottom: 2px solid #a8d8a0;
+                    padding-bottom: 4px;
+                }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+            .page-hero h1 {
+                font-size: 52px;
+                font-weight: 800;
+                letter-spacing: 3px;
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            }
+
+                .page-hero h1::after {
+                    content: '';
+                    display: block;
+                    width: 80px;
+                    height: 4px;
+                    background: #a8d8a0;
+                    margin: 16px auto 0;
+                    border-radius: 2px;
+                }
+
+            .page-hero p {
+                font-size: 18px;
+                margin-top: 14px;
+                opacity: 0.85;
+                font-style: italic;
+                letter-spacing: 1px;
+            }
+
+        .ueber-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .ueber-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+            .ueber-intro img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+                object-fit: cover;
+                height: 420px;
+            }
+
+        .ueber-text h2 {
+            font-size: 36px;
+            color: #2c6e3a;
+            margin-bottom: 16px;
+        }
+
+            .ueber-text h2::after {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(to right, #2c6e3a, #a8d8a0);
+                margin: 10px 0 0;
+                border-radius: 2px;
+            }
+
+        .ueber-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        .werte-section {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+        }
+
+            .werte-section h2 {
+                font-size: 34px;
+                color: #2c6e3a;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+                .werte-section h2::after {
+                    content: '';
+                    display: block;
+                    width: 70px;
+                    height: 4px;
+                    background: linear-gradient(to right, #2c6e3a, #a8d8a0);
+                    margin: 12px auto 0;
+                    border-radius: 2px;
+                }
+
+        .werte-subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .werte-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .wert-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+            .wert-item .icon {
+                font-size: 44px;
+                margin-bottom: 14px;
+            }
+
+            .wert-item h3 {
+                font-size: 20px;
+                color: #2c6e3a;
+                margin-bottom: 10px;
+            }
+
+            .wert-item p {
+                font-size: 15px;
+                color: #666;
+                line-height: 1.7;
+            }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+            .cta-section h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 14px;
+            }
+
+            .cta-section p {
+                font-size: 17px;
+                opacity: 0.85;
+                margin-bottom: 32px;
+            }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2c6e3a;
+        }
+
+            .btn-primary:hover {
+                background: #a8d8a0;
+                color: white;
+                transform: translateY(-3px);
+            }
+
+        footer {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+            footer p {
+                opacity: 0.7;
+                font-size: 14px;
+                margin-top: 8px;
+            }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .ueber-intro {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+                .ueber-intro img {
+                    height: 280px;
+                }
+
+            .werte-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+                nav a {
+                    font-size: 13px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber.html" class="active">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="page-hero">
+        <h1>👨‍🌾 Über uns</h1>
+        <p>Leidenschaft für Gärten – seit Jahren mit Herz dabei.</p>
+    </div>
+
+    <section class="ueber-section">
+
+        <div class="ueber-intro">
+            <img src="Medien/Peter.jpeg" alt="Peter Knuhr" />
+            <div class="ueber-text">
+                <h2>Hallo, ich bin Peter Knuhr</h2>
+                <p>
+                    Mit echter Begeisterung für die Natur und einem geschulten Blick für Details kümmere ich mich
+                    seit Jahren um Gärten in der Region. Was als Leidenschaft begann, ist heute mein Beruf –
+                    und das merkt man an jedem Handgriff.
+                </p>
+                <p>
+                    Ob kleiner Hausgarten oder großes Grundstück: Ich bringe Erfahrung, Zuverlässigkeit und
+                    echtes Engagement mit. Für mich ist jeder Garten einzigartig – und verdient individuelle
+                    Aufmerksamkeit.
+                </p>
+                <p>
+                    Mein Anspruch: Ihr Garten soll nicht nur gepflegt aussehen, sondern ein Ort sein,
+                    an dem Sie sich wohlfühlen. Ich freue mich darauf, auch Ihren Garten zu verschönern!
+                </p>
+            </div>
+        </div>
+
+        <div class="werte-section">
+            <h2>Unsere Werte</h2>
+            <p class="werte-subtitle">Das macht uns aus – und das können Sie von uns erwarten.</p>
+            <div class="werte-grid">
+
+                <div class="wert-item">
+                    <div class="icon">🤝</div>
+                    <h3>Zuverlässigkeit</h3>
+                    <p>Termine werden eingehalten, Absprachen respektiert. Sie können sich auf uns verlassen.</p>
+                </div>
+
+                <div class="wert-item">
+                    <div class="icon">⭐</div>
+                    <h3>Qualität</h3>
+                    <p>Wir arbeiten sorgfältig und gründlich – mit dem richtigen Werkzeug und dem nötigen Fachwissen.</p>
+                </div>
+
+                <div class="wert-item">
+                    <div class="icon">💚</div>
+                    <h3>Leidenschaft</h3>
+                    <p>Gartenarbeit ist für uns kein Job – es ist Berufung. Das spüren Sie im Ergebnis.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="cta-section">
+        <h2>Lernen Sie uns kennen!</h2>
+        <p>Nehmen Sie Kontakt auf – wir freuen uns auf ein persönliches Gespräch.</p>
+        <a href="kontakt.html" class="btn btn-primary">Jetzt Kontakt aufnehmen</a>
+    </div>
+
+    <footer>
+        <h3>Knuhr Gartendienstleistungen</h3>
+        <p>Inhaber: Peter Knuhr</p>
+        <p>© 2026 – Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>

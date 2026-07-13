@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Knuhr Gartendienstleistungen</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 110, 58, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            z-index: 100;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+                transition: color 0.3s;
+            }
+
+                nav a:hover {
+                    color: #a8d8a0;
+                }
+
+                nav a.active {
+                    border-bottom: 2px solid #a8d8a0;
+                    padding-bottom: 4px;
+                }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+            .page-hero h1 {
+                font-size: 52px;
+                font-weight: 800;
+                letter-spacing: 3px;
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            }
+
+                .page-hero h1::after {
+                    content: '';
+                    display: block;
+                    width: 80px;
+                    height: 4px;
+                    background: #a8d8a0;
+                    margin: 16px auto 0;
+                    border-radius: 2px;
+                }
+
+            .page-hero p {
+                font-size: 18px;
+                margin-top: 14px;
+                opacity: 0.85;
+                font-style: italic;
+                letter-spacing: 1px;
+            }
+
+        .kontakt-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* ── Kontaktinfos links ── */
+        .kontakt-info h2 {
+            font-size: 32px;
+            color: #2c6e3a;
+            margin-bottom: 10px;
+        }
+
+            .kontakt-info h2::after {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(to right, #2c6e3a, #a8d8a0);
+                margin: 10px 0 0;
+                border-radius: 2px;
+            }
+
+        .kontakt-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-top: 18px;
+            margin-bottom: 36px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+            background: white;
+            border-radius: 14px;
+            padding: 18px 22px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+            .info-item .icon {
+                font-size: 28px;
+                flex-shrink: 0;
+            }
+
+            .info-item .info-text strong {
+                display: block;
+                font-size: 14px;
+                color: #2c6e3a;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 3px;
+            }
+
+            .info-item .info-text span {
+                font-size: 16px;
+                color: #333;
+            }
+
+            .info-item .info-text a {
+                font-size: 16px;
+                color: #333;
+                text-decoration: none;
+            }
+
+                .info-item .info-text a:hover {
+                    color: #2c6e3a;
+                    text-decoration: underline;
+                }
+
+        /* ── Formular rechts ── */
+        .kontakt-form {
+            background: white;
+            border-radius: 24px;
+            padding: 44px 36px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+        }
+
+            .kontakt-form h2 {
+                font-size: 28px;
+                color: #2c6e3a;
+                margin-bottom: 28px;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                color: #444;
+                margin-bottom: 7px;
+                letter-spacing: 0.5px;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                width: 100%;
+                padding: 13px 16px;
+                border: 2px solid #e0e8e0;
+                border-radius: 12px;
+                font-size: 15px;
+                font-family: inherit;
+                color: #333;
+                background: #f8faf8;
+                transition: border-color 0.3s, box-shadow 0.3s;
+                outline: none;
+            }
+
+                .form-group input:focus,
+                .form-group textarea:focus,
+                .form-group select:focus {
+                    border-color: #2c6e3a;
+                    box-shadow: 0 0 0 3px rgba(44, 110, 58, 0.12);
+                    background: white;
+                }
+
+            .form-group textarea {
+                resize: vertical;
+                min-height: 130px;
+            }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+            .btn-submit:hover {
+                background: linear-gradient(135deg, #2c6e3a, #4a9e5a);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(44, 110, 58, 0.35);
+            }
+
+        .success-msg {
+            display: none;
+            background: #e8f5e9;
+            border: 2px solid #a8d8a0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            color: #2c6e3a;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 16px;
+            font-size: 15px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+            footer p {
+                opacity: 0.7;
+                font-size: 14px;
+                margin-top: 8px;
+            }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .kontakt-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+                nav a {
+                    font-size: 13px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber.html">Über uns</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+
+    <div class="page-hero">
+        <h1>📞 Kontakt</h1>
+        <p>Wir freuen uns auf Ihre Nachricht – unverbindlich und schnell.</p>
+    </div>
+
+    <section class="kontakt-section">
+
+        <!-- Kontaktinfos -->
+        <div class="kontakt-info">
+            <h2>So erreichen Sie uns</h2>
+            <p>
+                Haben Sie Fragen, möchten ein Angebot anfragen oder einen Termin vereinbaren?
+                Kontaktieren Sie uns – wir melden uns schnellstmöglich bei Ihnen!
+            </p>
+
+            <div class="info-item">
+                <div class="icon">📱</div>
+                <div class="info-text">
+                    <strong>Telefon</strong>
+                    <a href="tel:+49123456789">+49 123 456 789</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">✉️</div>
+                <div class="info-text">
+                    <strong>E-Mail</strong>
+                    <a href="mailto:info@knuhr-garten.de">info@knuhr-garten.de</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">📍</div>
+                <div class="info-text">
+                    <strong>Einsatzgebiet</strong>
+                    <span>Region & Umgebung</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon">🕐</div>
+                <div class="info-text">
+                    <strong>Erreichbarkeit</strong>
+                    <span>Mo – Fr: 7:00 – 18:00 Uhr</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontaktformular -->
+        <div class="kontakt-form">
+            <h2>✍️ Nachricht senden</h2>
+            <form id="kontaktFormular" onsubmit="handleSubmit(event)">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vorname">Vorname *</label>
+                        <input type="text" id="vorname" name="vorname" placeholder="Max" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="nachname">Nachname *</label>
+                        <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" placeholder="max@beispiel.de" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="telefon">Telefonnummer</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+49 ..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="leistung">Gewünschte Leistung</label>
+                    <select id="leistung" name="leistung">
+                        <option value="">– Bitte wählen –</option>
+                        <option value="rasen">Rasenmähen</option>
+                        <option value="hecke">Heckenschnitt</option>
+                        <option value="bepflanzung">Bepflanzung</option>
+                        <option value="laub">Laubbeseitigung</option>
+                        <option value="beet">Beetpflege</option>
+                        <option value="reinigung">Gartenreinigung</option>
+                        <option value="baum">Baumpflege</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nachricht">Ihre Nachricht *</label>
+                    <textarea id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihr Anliegen..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">📨 Nachricht absenden</button>
+                <div class="success-msg" id="successMsg">
+                    ✅ Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns bald bei Ihnen.
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>Knuhr Gartendienstleistungen</h3>
+        <p>Inhaber: Peter Knuhr</p>
+        <p>© 2026 – Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('successMsg');
+            msg.style.display = 'block';
+            document.getElementById('kontaktFormular').reset();
+            setTimeout(() => { msg.style.display = 'none'; }, 6000);
+        }
+    </script>
+
+</body>
+</html>

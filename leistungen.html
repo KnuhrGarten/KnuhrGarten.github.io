@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leistungen – Knuhr Gartendienstleistungen</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 110, 58, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            z-index: 100;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+                transition: color 0.3s;
+            }
+
+                nav a:hover {
+                    color: #a8d8a0;
+                }
+
+                nav a.active {
+                    border-bottom: 2px solid #a8d8a0;
+                    padding-bottom: 4px;
+                }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+            .page-hero h1 {
+                font-size: 52px;
+                font-weight: 800;
+                letter-spacing: 3px;
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            }
+
+            .page-hero p {
+                font-size: 18px;
+                margin-top: 14px;
+                opacity: 0.85;
+                font-style: italic;
+                letter-spacing: 1px;
+            }
+
+            .page-hero h1::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                background: #a8d8a0;
+                margin: 16px auto 0;
+                border-radius: 2px;
+            }
+
+        .leistungen-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .leistungen-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .leistung-card {
+            background: white;
+            border-radius: 20px;
+            padding: 36px 28px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+            .leistung-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+            }
+
+            .leistung-card .icon {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+
+            .leistung-card h3 {
+                font-size: 22px;
+                color: #2c6e3a;
+                margin-bottom: 12px;
+            }
+
+            .leistung-card p {
+                font-size: 15px;
+                color: #666;
+                line-height: 1.7;
+            }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+            .cta-section h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 14px;
+            }
+
+            .cta-section p {
+                font-size: 17px;
+                opacity: 0.85;
+                margin-bottom: 32px;
+            }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2c6e3a;
+        }
+
+            .btn-primary:hover {
+                background: #a8d8a0;
+                color: white;
+                transform: translateY(-3px);
+            }
+
+        footer {
+            background: linear-gradient(135deg, #1a4a22, #2c6e3a);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+            footer p {
+                opacity: 0.7;
+                font-size: 14px;
+                margin-top: 8px;
+            }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .leistungen-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+                nav a {
+                    font-size: 13px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="leistungen.html" class="active">Leistungen</a>
+        <a href="ueber.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="page-hero">
+        <h1>🌱 Unsere Leistungen</h1>
+        <p>Alles rund um Ihren Garten – professionell, zuverlässig und mit Leidenschaft.</p>
+    </div>
+
+    <section class="leistungen-section">
+        <div class="leistungen-grid">
+
+            <div class="leistung-card">
+                <div class="icon">🌿</div>
+                <h3>Rasenmähen</h3>
+                <p>Regelmäßiges Mähen für einen gepflegten, gleichmäßigen Rasen – egal wie groß Ihre Fläche ist.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">✂️</div>
+                <h3>Heckenschnitt</h3>
+                <p>Präziser Schnitt für Hecken, Sträucher und Formgehölze – für klare Konturen und gesundes Wachstum.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">🌸</div>
+                <h3>Bepflanzung</h3>
+                <p>Saisonale Bepflanzung von Beeten, Töpfen und Kübeln – farbenfroh und passend zur Jahreszeit.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">🍂</div>
+                <h3>Laubbeseitigung</h3>
+                <p>Gründliches Entfernen von Laub im Herbst – damit Ihr Garten auch in der kalten Jahreszeit ordentlich bleibt.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">🪴</div>
+                <h3>Beetpflege</h3>
+                <p>Jäten, Lockern, Düngen und Pflegen – wir sorgen dafür, dass Ihre Beete das ganze Jahr über strahlen.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">🚜</div>
+                <h3>Gartenreinigung</h3>
+                <p>Frühjahrs- und Herbstreinigung Ihres Gartens – wir machen Ihren Außenbereich fit für jede Saison.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">💧</div>
+                <h3>Bewässerung</h3>
+                <p>Beratung und Einrichtung von Bewässerungssystemen – damit Ihre Pflanzen auch in der Hitze gut versorgt sind.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">🪵</div>
+                <h3>Baumpflege</h3>
+                <p>Fachgerechter Rückschnitt und Pflege von Bäumen und größeren Gehölzen auf Ihrem Grundstück.</p>
+            </div>
+
+            <div class="leistung-card">
+                <div class="icon">📋</div>
+                <h3>Individuelle Aufträge</h3>
+                <p>Sie haben einen besonderen Wunsch? Sprechen Sie uns an – wir finden gemeinsam die passende Lösung.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>Interesse geweckt?</h2>
+        <p>Kontaktieren Sie uns für ein unverbindliches Angebot – wir freuen uns auf Ihre Anfrage!</p>
+        <a href="kontakt.html" class="btn btn-primary">Jetzt Kontakt aufnehmen</a>
+    </div>
+
+    <footer>
+        <h3>Knuhr Gartendienstleistungen</h3>
+        <p>Inhaber: Peter Knuhr</p>
+        <p>© 2026 – Alle Rechte vorbehalten</p>
+    </footer>
+
+</body>
+</html>
